@@ -93,7 +93,7 @@ for menu_dict in menu_by_date: #get hold of a dictionary from the list with date
 #PROCESSING DATE
 from datetime import datetime
 
-updated_menu_by_date = []
+updated_menu_by_date = {}
 
 for daily_menu in menu_by_date:
     date_object = list(daily_menu.keys())[0]  # Extract the first key (datetime object)
@@ -104,7 +104,7 @@ for daily_menu in menu_by_date:
     day = str(date_object.day).zfill(2)
 
     # Create the new menu with correctly formatted dates
-    updated_menu_by_date.append({f"{year}-{month}-{day}": daily_menu[date_object]})  # Directly access the value
+    updated_menu_by_date[f"{year}-{month}-{day}"] = daily_menu[date_object]
 
 # print(updated_menu_by_date) #for debugging
 
